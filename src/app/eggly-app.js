@@ -15,4 +15,5 @@ angular.module('Eggly', [
 
         $urlRouterProvider.otherwise('/');
     })
+    
 ;

@@ -13,6 +13,9 @@
     </head>
     <body>
         <div class="container-fluid">
+            <div class="row suggest-panel">
+                <div class="col-sm-12 col-md-12 col-sm-offset-3 col-md-offset-0" ui-view="suggest"></div>
+            </div>
             <div class="row">
                 <div class="col-sm-3 col-md-2 sidebar" ui-view="categories"></div>
                 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ui-view="bookmarks"></div>
@@ -28,6 +31,7 @@
 
         <script src="app/eggly-app.js"></script>
         <script src="app/categories/categories.js"></script>
+        <script src="app/categories/suggest/categories-suggest.js"></script>
         <script src="app/categories/bookmarks/bookmarks.js"></script>
         <script src="app/categories/bookmarks/create/bookmark-create.js"></script>
         <script src="app/categories/bookmarks/edit/bookmark-edit.js"></script>

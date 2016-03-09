@@ -1,5 +1,5 @@
 angular.module('categories', [
-    'eggly.models.categories'
+    'eggly.models.categories', 'categories.suggest'
 ])
     .config(function ($stateProvider) {
         $stateProvider
@@ -16,7 +16,8 @@ angular.module('categories', [
                     'bookmarks@': {
                         controller: 'BookmarksListCtrl as bookmarksListCtrl',
                         templateUrl: 'app/categories/bookmarks/bookmarks.tmpl.html'
-                    }
+                    },
+
                 }
             })
         ;
@@ -28,5 +29,19 @@ angular.module('categories', [
             .then(function (result) {
                 categoriesListCtrl.categories = result;
             });
+    
+        categoriesListCtrl.suggestedCategories = CategoriesModel.getSuggestedCategories();
+           /* .then(function(result) {
+                categoriesListCtrl.suggestedCategories = result;
+            });*/
+        
+        categoriesListCtrl.acceptNewCategory = function(newCat) {
+            var index = categoriesListCtrl.suggestedCategories.indexOf(newCat);
+            categoriesListCtrl.suggestedCategories.splice(index, 1);
+            
+            var aNewCat = {name: newCat};
+            categoriesListCtrl.categories.push(aNewCat);
+            console.log(categoriesListCtrl.categories);
+        };
     })
 ;

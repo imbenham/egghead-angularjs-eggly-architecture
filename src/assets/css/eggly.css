@@ -36,6 +36,19 @@ a:hover {
     text-decoration: none;
 }
 
+.sidebar #pending {
+    color: aquamarine;
+}
+
+.sidebar button {
+    color: #5bc0de;
+    width: 50px;
+    height: 30px;
+    border-radius: 10px;
+    margin-left: 20px;
+    background-color:azure;
+}
+
 .sub-header {
     padding-bottom: 10px;
     border-bottom: 1px solid #EEE;
@@ -109,4 +122,26 @@ a:hover {
 
 .create-form, .edit-form {
     padding: 20px;
+}
+
+.suggest-panel {
+    background-color: orangered;
+    color: #FFEECC;
+    padding-left: 8vw;
+    text-align: left;
+    transition: background-color 0.5, height 0.5; 
+}
+
+.suggest-active {
+    opacity: 0.9;
+    height: 30px;
+}
+
+.suggest-panel.content {
+    padding-bottom: 10px;
+}
+.suggest-input {
+    color:black;
+    margin-left: 8px;
+    border-radius: 15px;
 }

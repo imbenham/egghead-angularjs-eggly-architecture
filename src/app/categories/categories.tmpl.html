@@ -5,4 +5,8 @@
             {{category.name}}
         </a>
     </li>
+    <li><button ui-sref="eggly.categories.suggest" id="suggest-button">+</button></li>
+    <li ng-repeat="suggestedCategory in categoriesListCtrl.suggestedCategories">
+        <a id="pending" ng-click="categoriesListCtrl.acceptNewCategory(suggestedCategory)">{{suggestedCategory}}</a>
+    </li>
 </ul>

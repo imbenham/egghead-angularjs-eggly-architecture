@@ -7,8 +7,11 @@ angular.module('eggly.models.categories', [
                 FETCH: 'data/categories.json'
             },
             categories,
-            currentCategory;
+            currentCategory
+        
+        this.suggestedCategories = [];
 
+       
         function extract(result) {
             return result.data;
         }
@@ -18,6 +21,15 @@ angular.module('eggly.models.categories', [
             return categories;
         }
 
+        // this would normally go to a back-end...
+         model.addSuggestedCategory = function(cat){
+            this.suggestedCategories.push(cat);
+        };
+        
+        model.getSuggestedCategories = function() {
+            return this.suggestedCategories;
+        };
+         
         model.getCategories = function() {
             return (categories) ? $q.when(categories) : $http.get(URLS.FETCH).then(cacheCategories);
         };
